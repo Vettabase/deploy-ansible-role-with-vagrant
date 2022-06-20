@@ -1,0 +1,12 @@
+---
+- name: Upload chrony.conf template
+  tags: [chrony, chrony-config]
+  template:
+    src: chrony.conf.j2
+    dest: "{{ chrony_dir }}/{{ chrony_filename }}"
+    owner: root
+    group: root
+    mode: 0644
+    backup: true
+  notify: restart chrony
+  become: true

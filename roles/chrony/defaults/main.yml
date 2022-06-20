@@ -1,0 +1,13 @@
+---
+# defaults file for chrony
+ntp_servers:
+  - time.google.com
+  - time1.google.com
+  - time2.google.com
+  - time3.google.com
+  - time4.google.com
+
+chrony_package: DEFAULT
+chrony_service: DEFAULT
+chrony_dir: DEFAULT
+chrony_filename: DEFAULT

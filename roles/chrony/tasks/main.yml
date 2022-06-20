@@ -1,0 +1,20 @@
+---
+# tasks file for chrony
+
+- name: Validate if the ntp_servers is not none
+  tags: [chrony, chrony-validate]
+  assert:
+    that: ntp_servers is not none and ( ntp_servers | length > 0)
+    fail_msg: "ntp_servers is not set"
+    success_msg: "The item ntp_servers is defined"
+
+- name: Load the Debian specific defaults
+  include_tasks: debian.yml
+  when: ansible_pkg_mgr == 'apt'
+
+- name: Load the RedHat specific defaults
+  include_tasks: redhat.yml
+  when: ansible_pkg_mgr == 'yum'
+
+- include_tasks: install.yml
+- include_tasks: configure.yml

@@ -1,0 +1,8 @@
+---
+- name: Install Chrony
+  tags: chrony
+  package:
+    name: "{{ chrony_package }}"
+    state: present
+    update_cache: true
+  become: true

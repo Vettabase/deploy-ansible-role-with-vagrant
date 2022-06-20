@@ -1,0 +1,5 @@
+---
+- name: Deploy a Ansible Role using Vagrant
+  hosts: all
+  roles:
+    - chrony
