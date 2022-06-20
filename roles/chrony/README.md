@@ -28,11 +28,12 @@ None.
 
 Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
 
+```
     - hosts: servers
       become: true
       roles:
-         - chorny
-
+         - chrony
+```
 ## Copyright and Contacts
 
 This repository is distributed under the terms of the GNU GPL, version 3. Copyright: Vettabase Ltd.
